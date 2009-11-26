@@ -7,7 +7,7 @@
 # Server OS:                    Win32
 # Target compatibility:         ANSI SQL
 # HeidiSQL version:             4.0
-# Date/time:                    11/25/2009 5:21:33 PM
+# Date/time:                    11/26/2009 6:23:10 PM
 # --------------------------------------------------------
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ANSI,NO_BACKSLASH_ESCAPES';*/
@@ -29,10 +29,12 @@ USE "bmc";
 #
 
 CREATE TABLE "albums" (
-  "id" tinyint(3) unsigned NOT NULL,
+  "id" tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   "name" varchar(50) NOT NULL,
   "description" varchar(250) DEFAULT NULL,
   "owner" tinyint(3) unsigned NOT NULL,
+  "front_image" tinyint(3) unsigned DEFAULT NULL,
+  PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
   KEY "id_2" ("id")
 );
@@ -121,7 +123,7 @@ CREATE TABLE "images" (
   "alt" varchar(50) DEFAULT NULL,
   "path" varchar(250) DEFAULT NULL,
   "owner" tinyint(3) unsigned NOT NULL DEFAULT '0',
-  "album" tinyint(3) unsigned DEFAULT NULL,
+  "album_id" tinyint(3) unsigned DEFAULT NULL,
   "news_id" tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
@@ -136,17 +138,17 @@ CREATE TABLE "images" (
 
 LOCK TABLES "images" WRITE;
 /*!40000 ALTER TABLE "images" DISABLE KEYS;*/
-INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album", "news_id") VALUES
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(1,'382348365.jpg',NULL,'images',0,NULL,NULL);
-INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album", "news_id") VALUES
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(2,'546139373.jpg',NULL,'images',0,NULL,NULL);
-INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album", "news_id") VALUES
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(3,'546139373.jpg',NULL,'images',0,NULL,NULL);
-INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album", "news_id") VALUES
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(17,'1259076371.jpg',NULL,'images',0,NULL,NULL);
-INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album", "news_id") VALUES
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(18,'1259076581.JPG',NULL,'images',0,NULL,NULL);
-INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album", "news_id") VALUES
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(19,'1259077264.JPG',NULL,'images',0,NULL,NULL);
 /*!40000 ALTER TABLE "images" ENABLE KEYS;*/
 UNLOCK TABLES;
