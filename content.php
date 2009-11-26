@@ -10,9 +10,15 @@ $pagename = $_SERVER['PHP_SELF'];
 
 if ( $pagename == "/bmc/meetings.php") {
 
-	echo "<table height=600 width=\"85%\" border=\"0\" cellspacing=\"0\" cellpading=\"0\">";
-	echo "<tr><td>2009</td><td>2008</td><td>2007</td><td>2006</td></tr>";
+	echo "<table height=\"75%\" width=\"85%\" border=\"0\" cellspacing=\"0\" cellpading=\"0\">";
+	echo "<tr valign=\"top\">";
+	$meetings_list = mysql_query("SELECT * FROM meetings");
+	while($row = mysql_fetch_array($meetings_list)) {
+		echo "<td><a href=\"#\" onClick=\"doStuff(" . $row['year'] . ")\">" . $row['year'] . "</a></td>";
+	}
+	echo "</tr>";
 	echo "</table>";
+	echo "<div id=\"displayYear\">Select an year to display information about the meeting</div>";
 }
 
 if ( $pagename == "/bmc/about.php") {
