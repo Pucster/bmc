@@ -1,6 +1,6 @@
 var xmlhttp;
 
-function changeMainContent(str)
+function changeMainContent(url)
 {
 xmlhttp=GetXmlHttpObject();
 if (xmlhttp==null)
@@ -8,8 +8,6 @@ if (xmlhttp==null)
   alert ("Browser does not support HTTP Request");
   return;
   }
-var url="http://localhost/bmc/";
-url=url+str;
 url=url+"?sid="+Math.random();
 xmlhttp.onreadystatechange=mainContentStateChanged;
 xmlhttp.open("GET",url,true);
@@ -24,7 +22,7 @@ document.getElementById("mainContent").innerHTML=xmlhttp.responseText;
 }
 }
 
-function doStuff(str)
+function doStuff(url,str)
 {
 xmlhttp=GetXmlHttpObject();
 if (xmlhttp==null)
@@ -32,7 +30,6 @@ if (xmlhttp==null)
   alert ("Browser does not support HTTP Request");
   return;
   }
-var url="http://localhost/bmc/display.php";
 url=url+"?q="+str;
 url=url+"&sid="+Math.random();
 xmlhttp.onreadystatechange=stateChanged;

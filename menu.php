@@ -6,7 +6,7 @@
 	{
 		echo "<td>";
 		echo "<a href=\"#\" onmouseover=\"setOverImg('" . $row['id'] .  "','');\" onmouseout=\"setOutImg('" . 
-			$row['id'] .  "','');\" target=\"\" onClick=\"changeMainContent('" . $row['link'] . "')\">" . 
+			$row['id'] .  "','');\" target=\"\" onClick=\"changeMainContent('http://" . $hostname . $context . "/" . $row['link'] . "')\">" . 
 			"<img border=0 src=\"images/" . $row['image'] . "_up.png\" id=\"button" . $row['id'] . "\">"  . "</a>";
 		echo "</td>";
 	}
