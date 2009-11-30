@@ -2,7 +2,7 @@
 	include ("config.php");
 	mysql_connect ($sql_host, $sql_user, $sql_pass);
     mysql_select_db ($sql_db);
-	
+
 	$result = mysql_query("SELECT * FROM members WHERE id=" . $_GET['id']);
 	$member = mysql_fetch_array($result);
 	$result = mysql_query("SELECT * FROM images WHERE id=" . $member['profile_image']);

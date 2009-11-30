@@ -2,7 +2,7 @@
 	include ("config.php");
 	mysql_connect ($sql_host, $sql_user, $sql_pass);
     mysql_select_db ($sql_db);
-	$news_list = mysql_query("SELECT * FROM news ORDER by post_date");
+	$news_list = mysql_query("SELECT * FROM news ORDER by post_date desc");
 ?>
 
 <table height=600 cellpadding=5>
@@ -11,7 +11,14 @@
 
 <tr><td align="left">
 <?php 
-echo $row['post_date'];
+//$result = strptime($row['post_date'], '%Y-%m-%d');
+$day = mysql_fetch_array(mysql_query("SELECT DAY('" . $row['post_date'] . "')"));
+$month = mysql_fetch_array(mysql_query("SELECT MONTHNAME('" . $row['post_date'] . "')"));
+$year = mysql_fetch_array(mysql_query("SELECT YEAR('" . $row['post_date'] . "')"));
+echo $day['0'] . " " . $month['0'] . " " . $year['0'];
+
+//echo $result['tm_year'];
+//echo $row['post_date'];
 ?>
 </td></tr>
 <tr><td>
@@ -22,6 +29,7 @@ echo $row['post_date'];
 </td></tr>
 <tr><td>
 <?php
+if ($row['content'] != contentTruncate($row['content'], 300)) 
 echo "<a href=\"#\" onClick=\"changeMainContent('http://" . $hostname . $context . "/news_display.php?id=" . $row['id'] . "')\">Citeste toata stirea</a>";
 ?>
 </td></tr>
