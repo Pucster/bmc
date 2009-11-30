@@ -1,6 +1,30 @@
 var xmlhttp;
 
-function doStuff(str,id)
+function changeMainContent(str)
+{
+xmlhttp=GetXmlHttpObject();
+if (xmlhttp==null)
+  {
+  alert ("Browser does not support HTTP Request");
+  return;
+  }
+var url="http://localhost/bmc/";
+url=url+str;
+url=url+"?sid="+Math.random();
+xmlhttp.onreadystatechange=mainContentStateChanged;
+xmlhttp.open("GET",url,true);
+xmlhttp.send(null);
+}
+
+function mainContentStateChanged()
+{
+if (xmlhttp.readyState==4)
+{
+document.getElementById("mainContent").innerHTML=xmlhttp.responseText;
+}
+}
+
+function doStuff(str)
 {
 xmlhttp=GetXmlHttpObject();
 if (xmlhttp==null)

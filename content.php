@@ -33,7 +33,7 @@ if ( $pagename == "/bmc/about.php") {
 if ( $pagename == "/bmc/members.php") {
 	$i = 0;
 	echo "<br/><br/><br/><br/><br/>";
-	echo "<table height=600 width=\"85%\" border=\"0\" cellspacing=\"0\" cellpading=\"0\">";
+	echo "<table height=500 width=\"85%\" border=\"0\" cellspacing=\"0\" cellpading=\"0\">";
 	// up margin
 	echo "<tr heigth=50%><td colspan=6 bgcolor=\"red\"><img height=10 src=\"images/test.png\"/></td></tr>";
 	// first row

@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TrANSItional//EN">
 <?php
 	include ("config.php");
+	include ("helpers.php");
     mysql_connect ($sql_host, $sql_user, $sql_pass);
     mysql_select_db ($sql_db);
 ?>

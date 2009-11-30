@@ -1,12 +1,6 @@
 <?php
-include ("../config.php");
-include ("../helpers.php");
-include ("../db.php");
-include ("../top.php");
 include ("../header.php");
-?>
 
-<?php
 if (isset($_POST['delete'])) echo "We pressed delete!";
 if (isset($_POST['hide'])) echo "We pressed hide!";
 $members_list = mysql_query("SELECT * FROM members ORDER by name");
@@ -24,12 +18,7 @@ echo "<tr><td colspan=3>";
 echo "<input type=\"submit\" name=\"delete\" value=\"Delete\" />&nbsp;";
 echo "<input type=\"submit\" name=\"hide\" value=\"Hide\" /></td>";
 echo "</form></table>";
-?>
 
+include ("../footer.php");
 
-
-
-<?php
-include ("../bottom.php");
-include ("../end.php");
 ?>
