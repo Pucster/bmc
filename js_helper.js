@@ -8,7 +8,7 @@ if (xmlhttp==null)
   alert ("Browser does not support HTTP Request");
   return;
   }
-url=url+"?sid="+Math.random();
+//url=url+"?sid="+Math.random();
 xmlhttp.onreadystatechange=mainContentStateChanged;
 xmlhttp.open("GET",url,true);
 xmlhttp.send(null);
@@ -31,7 +31,7 @@ if (xmlhttp==null)
   return;
   }
 url=url+"?q="+str;
-url=url+"&sid="+Math.random();
+//url=url+"&sid="+Math.random();
 xmlhttp.onreadystatechange=stateChanged;
 xmlhttp.open("GET",url,true);
 xmlhttp.send(null);
