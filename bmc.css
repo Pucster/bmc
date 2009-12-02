@@ -4,6 +4,10 @@ body {
   background-color: #004040;
 }
 
+body.admin {
+	 background-color: white;
+}
+
 p.red {
 	color:rgb(255,0,0)
 }

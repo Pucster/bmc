@@ -7,7 +7,7 @@
 # Server OS:                    Win32
 # Target compatibility:         ANSI SQL
 # HeidiSQL version:             4.0
-# Date/time:                    2009-11-30 23:06:15
+# Date/time:                    12/2/2009 8:23:40 PM
 # --------------------------------------------------------
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ANSI,NO_BACKSLASH_ESCAPES';*/
@@ -256,7 +256,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "news" (
   PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
   KEY "id_2" ("id")
-) AUTO_INCREMENT=11;
+) AUTO_INCREMENT=12;
 
 
 
@@ -319,7 +319,42 @@ REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUE
 	(9,'Am luat bacu 5','<p>Ionescu</p>',1,'2009-12-12');
 REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
 	(10,'Am luat bacu 2','<p>Vasilescu</p>',1,'2009-12-12');
+REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
+	(11,'About BMC','Bukowina Motor Club (BMC) a luat fiinta in luna august 2006 si este singurul club moto din Bucovina. A fost fondat in Radauti, de 7 membri iar in momentul de fata numarul acestora depaseste 30. Numele clubului arata in mod simplu locatia si natura acestuia iar "Bukowina" a fost ales dupa denumirea originala a acestei zone. Clubul este deschis tuturor celor care se simt cu sufletul in Bucovina, sunt motociclisti (indiferent daca sunt indragostiti de speed, enduro, chopper, old timer, tourer ...), ne impartasesc modul nostru de a fi si il reprezinta intr-o maniera respectabila. Activitatile pe care ne-am propus sa le facem impreuna sunt diverse si includ plimbari cu motocicletele, achizitionarea de echipamente si motociclete, suport si ajutor in cazul excursiilor, organizarea de evenimente motociclistice publice, petreceri sau o simpla bere impreuna. Insemnele BMC au fost create avand la baza stema originala a Bucovinei.',0,'2009-12-12');
 /*!40000 ALTER TABLE "news" ENABLE KEYS;*/
+UNLOCK TABLES;
+
+
+#
+# Table structure for table 'users'
+#
+
+CREATE TABLE /*!32312 IF NOT EXISTS*/ "users" (
+  "id" tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  "username" varchar(50) NOT NULL,
+  "password" varchar(100) NOT NULL,
+  "is_admin" tinyint(3) unsigned NOT NULL DEFAULT '0',
+  "realname" varchar(50) NOT NULL,
+  PRIMARY KEY ("id"),
+  UNIQUE KEY "id" ("id"),
+  KEY "id_2" ("id")
+) AUTO_INCREMENT=4;
+
+
+
+#
+# Dumping data for table 'users'
+#
+
+LOCK TABLES "users" WRITE;
+/*!40000 ALTER TABLE "users" DISABLE KEYS;*/
+REPLACE INTO "users" ("id", "username", "password", "is_admin", "realname") VALUES
+	(1,'admin','0cc175b9c0f1b6a831c399e269772661',1,'Administrator');
+REPLACE INTO "users" ("id", "username", "password", "is_admin", "realname") VALUES
+	(2,'eugen','92eb5ffee6ae2fec3ad71c777531578f',1,'Eugen aka Puc');
+REPLACE INTO "users" ("id", "username", "password", "is_admin", "realname") VALUES
+	(3,'irina','0cc175b9c0f1b6a831c399e269772661',0,'Irina aka Puca');
+/*!40000 ALTER TABLE "users" ENABLE KEYS;*/
 UNLOCK TABLES;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE;*/
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;*/
