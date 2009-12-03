@@ -8,6 +8,11 @@ body.admin {
 	 background-color: white;
 }
 
+td.adminNewsTitle {
+	font-size: 20px;
+	white-space: nowrap;
+}
+
 p.red {
-	color:rgb(255,0,0)
+	color:rgb(255,0,0);
 }

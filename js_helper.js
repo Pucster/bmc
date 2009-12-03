@@ -1,5 +1,19 @@
 var xmlhttp;
 
+function changeMainContentWithConfirmation(url,question)
+{
+if (confirm(question)) {
+	xmlhttp=GetXmlHttpObject();
+	if (xmlhttp==null) {
+		alert ("Browser does not support HTTP Request");
+		return;
+	}
+	xmlhttp.onreadystatechange=mainContentStateChanged;
+	xmlhttp.open("GET",url,true);
+	xmlhttp.send(null);
+	}
+}
+
 function changeMainContent(url)
 {
 xmlhttp=GetXmlHttpObject();

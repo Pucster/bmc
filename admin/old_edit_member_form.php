@@ -1,9 +1,15 @@
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" method="post">
+<form action="http://localhost:2080/bmc/admin/edit_member.php" enctype="multipart/form-data" method="post">
 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 <table width="80%" align="center">
 <tr>
 <td align="right"><b>*Name:</b></td>
-<td><input type="text" name="name" value="<?php if (isset($_POST['name'])) echo $_POST['name'] ?>" maxlength="50"/> </td>
+<td><input type="text" name="name" value="
+<?php
+	if (isset($_POST['name'])) echo $_POST['name'];
+	if (isset($member['name'])) echo $member['name'];
+?>
+" maxlength="50"/> </td>
 </tr>
 <tr>
 <td align="right"><b>Nickname:</b></td>
@@ -19,7 +25,7 @@
 </tr>
 <tr>
 <td align="right"><b>Member since:</b></td>
-<td><input type="text" name="since" value="<?php if (isset($_POST['since'])) $_POST['since'] ?>" maxlength="50"/> </td>
+<td><input type="text" name="since" value="<?php if (isset($_POST['since'])) echo $_POST['since'] ?>" maxlength="50"/> </td>
 </tr>
 <tr>
 <td align="right"><b>*Image:</b></td>

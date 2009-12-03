@@ -64,7 +64,7 @@ $user = mysql_fetch_array($result);
 </td>
 </tr>
 <tr>
-<td colspan=6>
+<td colspan=7>
 <div id="mainContent">This is the admin work area!</div>
 </td>
 </table>

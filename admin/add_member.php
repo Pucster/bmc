@@ -1,36 +1,10 @@
 <?php
-include ("../config.php");
-include ("../helpers.php");
-include ("../db.php");
-include ("../top.php");
-include ("../header.php");
-?>
+	include("../config.php");
+	include("../helpers.php");
+	mysql_connect ($sql_host, $sql_user, $sql_pass);
+    mysql_select_db ($sql_db);
+	logToFile("c:\php.log", time() . "Vasilescu1");
 
-
-<?php
-
-if (!isset($_POST['submit'])) {
-
-include ("add_member_form.php");
-}
-else {
-	$error = false;
-	$error_message = '';
-	// Do some checks
-	if ($_POST['name'] == '') {
-		$error_message .= '<p class="red">You have to enter a name!</p>';
-		$error = true;
-	}
-	if ($_FILES['imgfile']['tmp_name'] == '') {
-		$error_message .= '<p class="red">You have to specify a file for the profile picture!</p>';
-		$error = true;
-	}
-	if ($error) { // Back to the form, with errors
-		echo "<p class=\"red\">We got some problems:</p>" . $error_message;
-		include ("add_member_form.php");
-	}
-	else { // everything is good
-	//Check the image and upload it
 	$imgfile = $_FILES['imgfile']['tmp_name'];
 	$uploaddir = "c:/www/bmc/images";
     if (@is_uploaded_file($imgfile))
@@ -41,23 +15,27 @@ else {
 			$now++;
 		}
 		$uploadedFileName = $now.'.'.$extension;
-		move_uploaded_file($_FILES['imgfile']['tmp_name'], $newfile);
-    }
-	// Add the image to the images table
-	//$result = mysql_query("INSERT INTO images VALUES (0,'" . $uploadedFileName . "',NULL,'images',0,NULL,NULL);");
-	// Get image id for what we've just inserted
-	//$image_id = mysql_result(mysql_query("SELECT id FROM images WHERE name like '" . $uploadedFileName . "'"),0);
-	// Prepare query for inserting the member into members table
-	$query = "INSERT INTO members VALUES (0,'"	. $_POST['name'] . "','" . $_POST['nickname'] . "','" .
-	$_POST['location'] . "'," . $image_id . ",'" . $_POST['ride'] . "','" . $_POST['since'] . "');";
-	//$result = mysql_query($query);
-	echo "Member added!<br/> Click <a href=\"" . $_SERVER['PHP_SELF'] . "\">here</a> to add another one or " . 
-	"<a href=\"http://" . $hostname . "/bmc/members.php\">here</a> to list the current members.";
-	}
-	}
-?>
+		move_uploaded_file($_FILES['imgfile']['tmp_name'], $newfile);	
 
-<?php
-include ("../bottom.php");
-include ("../end.php");
+	}
+	$result = mysql_query("INSERT INTO images VALUES (0,'" . $uploadedFileName . "',NULL,'images',0,NULL,NULL);");
+	$image_id = mysql_result(mysql_query("SELECT id FROM images WHERE name like '" . $uploadedFileName . "'"),0);
+	
+	if ($_POST['id'] != '0') {
+	logToFile("c:\php.log", time() . "Vasilescu2");
+	$query = "UPDATE members SET name='" . $_POST['name'] . "', nickname='" . $_POST['nickname']. "', location='" . $_POST['location'] . 
+	"', profile_image='" . $image_id . "', ride='" . $_POST['ride'] . "', start_date='" . $_POST['start_date'] . 
+	"',hidden='0' WHERE id='" . $_POST['id'] . "'";
+	logToFile("c:\php.log", time() . $query);
+	} else {
+	logToFile("c:\php.log", time() . "Vasilescu4");
+	$query ="INSERT INTO members (name,nickname,location,profile_image,ride,start_date,hidden) " .
+	"VALUES ('" . $_POST['name'] . "','" . $_POST['nickname'] . "','" . $_POST['location'] . 
+	"','" . $image_id . "','" . $_POST['ride'] . "','" . $_POST['start_date'] . "','0')"; 
+	logToFile("c:\php.log", time() . $query);
+	}
+	
+	$result = mysql_query($query);
+	redirect('http://localhost:2080/bmc/admin/main.php');
+
 ?>
