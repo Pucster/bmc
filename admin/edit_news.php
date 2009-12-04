@@ -13,7 +13,7 @@
 	<fieldset>
 		<legend>News editor</legend>
 		<label for="title">
-			Title:&nbsp;<input type="text" name="title" value="<?php if ($news_id != 0) echo $news['title']; ?>"/>
+			Title:&nbsp;<input type="text" size="50" name="title" value="<?php if ($news_id != 0) echo $news['title']; ?>"/>
 		</label>
 		
 		<input type="hidden" name="id" value="<?php echo $news_id; ?>">

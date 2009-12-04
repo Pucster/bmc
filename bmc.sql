@@ -7,7 +7,7 @@
 # Server OS:                    Win32
 # Target compatibility:         ANSI SQL
 # HeidiSQL version:             4.0
-# Date/time:                    12/3/2009 6:42:48 PM
+# Date/time:                    12/4/2009 3:06:33 PM
 # --------------------------------------------------------
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ANSI,NO_BACKSLASH_ESCAPES';*/
@@ -129,7 +129,7 @@ CREATE TABLE "images" (
   PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
   KEY "id_2" ("id")
-) AUTO_INCREMENT=23;
+) AUTO_INCREMENT=29;
 
 
 
@@ -157,6 +157,18 @@ INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id
 	(21,'1259858286.JPG',NULL,'images',0,NULL,NULL);
 INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
 	(22,'1259858449.JPG',NULL,'images',0,NULL,NULL);
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
+	(23,'1259923118.JPG',NULL,'images',0,NULL,NULL);
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
+	(24,'',NULL,'images',0,NULL,NULL);
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
+	(25,'',NULL,'images',0,NULL,NULL);
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
+	(26,'1259924491.JPG',NULL,'images',0,NULL,NULL);
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
+	(27,'1259924656.JPG',NULL,'images',0,NULL,NULL);
+INSERT INTO "images" ("id", "name", "alt", "path", "owner", "album_id", "news_id") VALUES
+	(28,'1259925093.JPG',NULL,'images',0,NULL,NULL);
 /*!40000 ALTER TABLE "images" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -204,14 +216,14 @@ CREATE TABLE "members" (
   "name" varchar(50) NOT NULL,
   "nickname" varchar(50) DEFAULT NULL,
   "location" varchar(50) DEFAULT NULL,
-  "profile_image" tinyint(3) unsigned NOT NULL,
+  "profile_image" tinyint(3) unsigned NOT NULL DEFAULT '0',
   "ride" varchar(50) DEFAULT NULL,
   "start_date" varchar(50) DEFAULT NULL,
   "hidden" tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
   KEY "id_2" ("id")
-) AUTO_INCREMENT=15;
+) AUTO_INCREMENT=16;
 
 
 
@@ -222,7 +234,7 @@ CREATE TABLE "members" (
 LOCK TABLES "members" WRITE;
 /*!40000 ALTER TABLE "members" DISABLE KEYS;*/
 INSERT INTO "members" ("id", "name", "nickname", "location", "profile_image", "ride", "start_date", "hidden") VALUES
-	(1,'Andrei Seredenciuc','Dracu','Radauti',1,'Ducati Indiana','Fondator',0);
+	(1,'Andrei Seredenciuc','Dracu','Radauti',24,'Ducati Indiana','Fondator',0);
 INSERT INTO "members" ("id", "name", "nickname", "location", "profile_image", "ride", "start_date", "hidden") VALUES
 	(2,'Eugen Cocalea','Puc','Iasi',2,'Kawasaki Vulcan Drifter 1500','2007',0);
 INSERT INTO "members" ("id", "name", "nickname", "location", "profile_image", "ride", "start_date", "hidden") VALUES
@@ -241,6 +253,8 @@ INSERT INTO "members" ("id", "name", "nickname", "location", "profile_image", "r
 	(13,'re432','g3','43',1,'435','543',0);
 INSERT INTO "members" ("id", "name", "nickname", "location", "profile_image", "ride", "start_date", "hidden") VALUES
 	(14,'George Georgel Georgescu','Geo','Vaslui',22,'MotoGuzzi','2001',0);
+INSERT INTO "members" ("id", "name", "nickname", "location", "profile_image", "ride", "start_date", "hidden") VALUES
+	(15,'testing423','vasea33','gff32',28,'432','3232',0);
 /*!40000 ALTER TABLE "members" ENABLE KEYS;*/
 UNLOCK TABLES;
 
