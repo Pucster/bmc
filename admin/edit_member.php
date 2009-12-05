@@ -16,7 +16,7 @@ if ($_GET['id'] != '0') {
 	$member_image = '';
 	$submit_text = 'Save member';
 	$pic_info = mysql_fetch_array(mysql_query("SELECT * FROM images WHERE id='" . $member['profile_image'] . "'"));
-	$pic_link = "http://" . $hostname . $context . "/" . $pic_info['path'] . "/" . $pic_info['name'];
+	$pic_link = "http://" . $hostname . $context . "/images/members/" . $pic_info['name'];
 } else {
 	$member_id = '0';
 	$member_name = '';

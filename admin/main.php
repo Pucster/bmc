@@ -51,7 +51,10 @@ $user = mysql_fetch_array($result);
 <a href="#" onClick="changeMainContent('<?php echo adminLink('members');?>')">Members</a>
 </td>
 <td>
-<a href="#" onClick="changeMainContent('<?php echo adminLink('photos');?>')">Photos</a>
+<a href="#" onClick="changeMainContent('<?php echo adminLink('albums');?>')">Albums</a>
+</td>
+<td>
+<a href="#" onClick="changeMainContent('<?php echo adminLink('images');?>')">Images</a>
 </td>
 <td>
 <a href="#" onClick="changeMainContent('<?php echo adminLink('news');?>')">News</a>

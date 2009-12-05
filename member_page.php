@@ -18,7 +18,7 @@
 <tr>
 
 <td width="300" valign="top">
-<img src="<?php echo $image['path'] . "/" . $image['name']?>" width=300></img>
+<img src="<?php echo "images/members/" . $image['name']?>" width=300></img>
 </td>
 <td valign="top">
 <p><b>Name:</b> <?php echo $member['name'];?></p>

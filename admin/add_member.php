@@ -7,7 +7,7 @@
 	if (isset($_FILES['imgfile']['name'])) {
 		$image_updated = true;
 		$imgfile = $_FILES['imgfile']['tmp_name'];
-		$uploaddir = "c:/www/bmc/images";
+		$uploaddir = $root_dir . "/images/members";
 		if (@is_uploaded_file($imgfile))
 		{
 			$extension = getFileExtension($_FILES['imgfile']['name']);
@@ -18,7 +18,7 @@
 			$uploadedFileName = $now.'.'.$extension;
 			move_uploaded_file($_FILES['imgfile']['tmp_name'], $newfile);	
 
-		$result = mysql_query("INSERT INTO images VALUES (0,'" . $uploadedFileName . "',NULL,'images',0,NULL,NULL);");
+		$result = mysql_query("INSERT INTO images VALUES (0,'" . $uploadedFileName . "',NULL,'images',0,8,NULL);");
 		$image_id = mysql_result(mysql_query("SELECT id FROM images WHERE name like '" . $uploadedFileName . "'"),0);
 		}
 	}

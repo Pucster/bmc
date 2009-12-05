@@ -14,6 +14,19 @@ if (confirm(question)) {
 	}
 }
 
+function changeAlbumView(url)
+{
+xmlhttp=GetXmlHttpObject();
+if (xmlhttp==null)
+  {
+  alert ("Browser does not support HTTP Request");
+  return;
+  }
+xmlhttp.onreadystatechange=viewAlbumStateChanged;
+xmlhttp.open("GET",url,true);
+xmlhttp.send(null);
+}
+
 function changeMainContent(url)
 {
 xmlhttp=GetXmlHttpObject();
@@ -26,6 +39,14 @@ if (xmlhttp==null)
 xmlhttp.onreadystatechange=mainContentStateChanged;
 xmlhttp.open("GET",url,true);
 xmlhttp.send(null);
+}
+
+function viewAlbumStateChanged()
+{
+if (xmlhttp.readyState==4)
+{
+document.getElementById("viewAlbum").innerHTML=xmlhttp.responseText;
+}
 }
 
 function mainContentStateChanged()

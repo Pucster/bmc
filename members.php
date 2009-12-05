@@ -18,7 +18,7 @@
 		$image = mysql_query("SELECT * FROM images where id=" . $row['profile_image']);
 		while($row2 = mysql_fetch_array($image)) {
 			echo "<a href=\"#\" onClick=\"changeMainContent('http://" . $hostname . $context . "/member_page.php?id=" . $row['id'] . "')\">";
-			echo "<img src=\"" . $row2['path'] . "/" . $row2['name'] . "\" height=\"125\" width=\"125\" />";
+			echo "<img src=\"thumbs/members/th_" . $row2['name'] . "\" height=\"125\" width=\"125\" />";
 			echo "</a>";
 		}
 		echo "</td></tr>";

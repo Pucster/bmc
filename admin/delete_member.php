@@ -5,5 +5,5 @@
     mysql_select_db ($sql_db);
 	$query = "DELETE FROM members WHERE id='" . $_GET['id'] . "'";
 	$result = mysql_query($query);
-	redirect('http://localhost:2080/bmc/admin/members.php');
+	redirect(adminLink('members'));
 ?>
