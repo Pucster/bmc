@@ -37,7 +37,7 @@ $user = mysql_fetch_array($result);
 <html>
 <body>
 
-<table height="600" width="80%" align="center" border="1">
+<table width="80%" align="center" border="1">
 <tr>
 <th height="1%" align="left" colspan=6>Welcome, <?php echo $user['realname']; ?><br/></th>
 <th align="right" width="10%"><a href="logout.inc.php">Log Out</a></th>
@@ -66,10 +66,15 @@ $user = mysql_fetch_array($result);
 <a href="#" onClick="changeMainContent('<?php echo adminLink('various');?>')">Various</a>
 </td>
 </tr>
+</table>
+<table width="600" align="center">
 <tr>
-<td colspan=7>
+<td valign=top>
 <div id="mainContent">This is the admin work area!</div>
 </td>
+<!--<td valign=center>
+<div id="secContent">This is the real work area!</div>
+</td>-->
 </table>
 
 </body>

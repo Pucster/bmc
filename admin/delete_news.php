@@ -11,6 +11,6 @@
 	//$result = mysql_query($query);
 	//$news = mysql_fetch_array($result);
 	//echo $news['title'] . "<br/>" . $news['content'];
-	redirect('http://localhost:2080/bmc/admin/news.php');
+	redirect(adminLink('news'));
 
 ?>

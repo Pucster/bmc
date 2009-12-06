@@ -41,6 +41,28 @@ xmlhttp.open("GET",url,true);
 xmlhttp.send(null);
 }
 
+function changeContent(url)
+{
+alert('Redirecting to '+url);
+xmlhttp=GetXmlHttpObject();
+if (xmlhttp==null)
+  {
+  alert ("Browser does not support HTTP Request");
+  return;
+  }
+xmlhttp.onreadystatechange=contentStateChanged;
+xmlhttp.open("GET",url,true);
+xmlhttp.send(null);
+}
+
+function contentStateChanged()
+{
+if (xmlhttp.readyState==4)
+{
+document.getElementById("secContent").innerHTML=xmlhttp.responseText;
+}
+}
+
 function viewAlbumStateChanged()
 {
 if (xmlhttp.readyState==4)

@@ -3,12 +3,12 @@
 	mysql_connect ($sql_host, $sql_user, $sql_pass);
     mysql_select_db ($sql_db);
 	$i = 0;
-	$album_list = mysql_query("SELECT * FROM albums WHERE hidden='0' ORDER by name");
+	$albumList = mysql_query("SELECT * FROM albums WHERE hidden='0' ORDER by name");
 ?>
 <table border="0" cellspacing="20" cellpading="0">
 <tr>
 <?php
-	while($row = mysql_fetch_array($album_list)) {
+	while($row = mysql_fetch_array($albumList)) {
 		$front_pic = mysql_fetch_array(mysql_query("SELECT * FROM images WHERE id=" . $row['front_image']));
 		$i = $i + 1;
 ?>

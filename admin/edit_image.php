@@ -20,7 +20,7 @@ if ($_GET['id'] != '0') {
 	$image_alt = '';
 	$submit_text = 'Add image';
 }
-$album_id = $_GET['album_id'];
+$albumId = $_GET['album_id'];
 ?>
 
 <form action="http://<?php echo $hostname . $context ?>/admin/add_image.php" enctype="multipart/form-data" method="post">
@@ -28,7 +28,7 @@ $album_id = $_GET['album_id'];
 <legend>Image editor</legend>
 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
 <input type="hidden" name="id" value="<?php echo $image_id; ?>">
-<input type="hidden" name="album_id" value="<?php echo $album_id; ?>">
+<input type="hidden" name="album_id" value="<?php echo $albumId; ?>">
 <table width="80%" align="top" valign="top">
 <tr><td width="50%" align="right" valign="top">
 <?php if ($image_id != '0') {?>
@@ -54,6 +54,9 @@ $album_id = $_GET['album_id'];
 <tr><td align="right">
 <input type="submit" name="submit" value ="<?php echo $submit_text?>" />
 </td></tr>
+</table>
+<table width="80%" align="top" valign="top">
+<tr><td align="right"><a href="#" onClick="changeMainContent('http://<?php echo $hostname . $context; ?>/admin/images.php?album_id=<?php echo $albumId; ?>')">Back</a></td></tr>
 </table>
 Note: Fields marked with a '*' are mandatory!
 </fieldset>

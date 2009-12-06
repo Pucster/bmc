@@ -7,7 +7,7 @@
 # Server OS:                    Win32
 # Target compatibility:         ANSI SQL
 # HeidiSQL version:             4.0
-# Date/time:                    12/5/2009 4:55:35 PM
+# Date/time:                    12/6/2009 5:04:01 PM
 # --------------------------------------------------------
 
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ANSI,NO_BACKSLASH_ESCAPES';*/
@@ -38,7 +38,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "albums" (
   PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
   KEY "id_2" ("id")
-) AUTO_INCREMENT=10;
+) AUTO_INCREMENT=11;
 
 
 
@@ -49,15 +49,17 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "albums" (
 LOCK TABLES "albums" WRITE;
 /*!40000 ALTER TABLE "albums" DISABLE KEYS;*/
 REPLACE INTO "albums" ("id", "name", "description", "owner", "front_image", "path", "hidden") VALUES
-	(1,'Albumu 1','Description',0,17,'album1',0);
+	(1,'Albumu 1','Description',0,54,'album1',0);
 REPLACE INTO "albums" ("id", "name", "description", "owner", "front_image", "path", "hidden") VALUES
 	(6,'Albumu 2','dedededede',0,45,'album2',0);
 REPLACE INTO "albums" ("id", "name", "description", "owner", "front_image", "path", "hidden") VALUES
-	(7,'test 123','efere',0,1,'test 123',0);
+	(7,'test 123','efere',0,47,'test_123',0);
 REPLACE INTO "albums" ("id", "name", "description", "owner", "front_image", "path", "hidden") VALUES
 	(8,'members','members',0,1,'members',1);
 REPLACE INTO "albums" ("id", "name", "description", "owner", "front_image", "path", "hidden") VALUES
-	(9,'re','rere',0,NULL,'rerere',1);
+	(9,'re3','rere',0,46,'rerere',0);
+REPLACE INTO "albums" ("id", "name", "description", "owner", "front_image", "path", "hidden") VALUES
+	(10,'album_de_test','desc',0,71,'album_de_test',0);
 /*!40000 ALTER TABLE "albums" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -122,7 +124,7 @@ REPLACE INTO "homepage_links" ("id", "name", "link", "image", "position") VALUES
 REPLACE INTO "homepage_links" ("id", "name", "link", "image", "position") VALUES
 	(6,'Forum','forum.php','forum',9);
 REPLACE INTO "homepage_links" ("id", "name", "link", "image", "position") VALUES
-	(7,'Album','photos.php','album',5);
+	(7,'Album','images.php','album',5);
 /*!40000 ALTER TABLE "homepage_links" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -141,7 +143,7 @@ CREATE TABLE /*!32312 IF NOT EXISTS*/ "images" (
   PRIMARY KEY ("id"),
   UNIQUE KEY "id" ("id"),
   KEY "id_2" ("id")
-) AUTO_INCREMENT=46;
+) AUTO_INCREMENT=106;
 
 
 
@@ -190,8 +192,6 @@ REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALU
 REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
 	(37,'1260012653.jpg','rwfdsfsd',0,1,NULL);
 REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
-	(38,'1260012717.jpg','dudu dudu',0,1,NULL);
-REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
 	(39,'1260014005.jpg','43fff',0,1,NULL);
 REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
 	(40,'1260014108.jpg','qqq',0,1,NULL);
@@ -205,6 +205,126 @@ REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALU
 	(44,'1260024762.jpg','wewe',0,6,NULL);
 REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
 	(45,'1260024914.jpg','fgfg',0,6,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(46,'1260036865.jpg','Dedeman vasile',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(47,'1260036900.jpg','3232',0,7,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(48,'1260098363.jpg','dddddddddddd',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(49,'1260098425.jpg','dddddddddddd',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(50,'1260098438.jpg','dddddddddddd',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(51,'1260100266.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(52,'1260100267.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(53,'1260100268.JPG','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(54,'1260100269.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(55,'1260100270.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(56,'1260100271.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(57,'1260100272.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(58,'1260100273.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(59,'1260100274.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(60,'1260100275.jpg','',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(61,'1260100529.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(62,'1260100530.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(63,'1260100531.JPG','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(64,'1260100539.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(65,'1260100540.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(66,'1260100543.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(67,'1260100545.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(68,'1260100546.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(69,'1260100547.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(70,'1260100548.jpg','',0,9,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(71,'1260100621.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(72,'1260100622.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(73,'1260100623.JPG','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(74,'1260100631.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(75,'1260100632.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(76,'1260100637.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(77,'1260100643.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(78,'1260100645.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(79,'1260100650.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(80,'1260100653.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(81,'1260103442.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(82,'1260103443.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(83,'1260103444.JPG','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(84,'1260103451.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(85,'1260103453.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(86,'1260103455.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(87,'1260103456.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(88,'1260103457.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(89,'1260103458.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(90,'1260103459.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(91,'1260103797.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(92,'1260103799.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(93,'1260103800.JPG','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(94,'1260103807.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(95,'1260103808.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(96,'1260103813.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(97,'1260103817.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(98,'1260103818.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(99,'1260103821.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(100,'1260103823.jpg','',0,10,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(101,'1260106316.jpg','4444',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(102,'1260106488.JPG','t45rf',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(103,'1260106562.JPG','t45rf2',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(104,'1260106638.JPG','t45rf2',0,1,NULL);
+REPLACE INTO "images" ("id", "name", "alt", "owner", "album_id", "news_id") VALUES
+	(105,'1260106700.jpg','yyy',0,1,NULL);
 /*!40000 ALTER TABLE "images" ENABLE KEYS;*/
 UNLOCK TABLES;
 
@@ -359,14 +479,6 @@ REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUE
 	(11,'About BMC','Bukowina Motor Club (BMC) a luat fiinta in luna august 2006 si este singurul club moto din Bucovina. A fost fondat in Radauti, de 7 membri iar in momentul de fata numarul acestora depaseste 30. Numele clubului arata in mod simplu locatia si natura acestuia iar "Bukowina" a fost ales dupa denumirea originala a acestei zone. Clubul este deschis tuturor celor care se simt cu sufletul in Bucovina, sunt motociclisti (indiferent daca sunt indragostiti de speed, enduro, chopper, old timer, tourer ...), ne impartasesc modul nostru de a fi si il reprezinta intr-o maniera respectabila. Activitatile pe care ne-am propus sa le facem impreuna sunt diverse si includ plimbari cu motocicletele, achizitionarea de echipamente si motociclete, suport si ajutor in cazul excursiilor, organizarea de evenimente motociclistice publice, petreceri sau o simpla bere impreuna. Insemnele BMC au fost create avand la baza stema originala a Bucovinei.',0,'2009-12-12');
 REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
 	(12,'Inca o stire de umplutura','Aici e un text de umplutura',1,'2008-12-03');
-REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
-	(15,'Inca o stire de umplutura','Inca o stire de umplutura',1,'2009-12-12');
-REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
-	(16,'Inca o stire de umplutura','Inca o stire de umplutura',1,'2009-12-12');
-REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
-	(17,'Inca o stire de umplutura','Inca o stire de umplutura',1,'2009-12-12');
-REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
-	(18,'Inca o stire de umplutura','Inca o stire de umplutura',1,'2009-12-12');
 REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES
 	(19,'Inca o stire de umplutura','Inca o stire de umplutura',1,'2009-12-12');
 REPLACE INTO "news" ("id", "title", "content", "category_id", "post_date") VALUES

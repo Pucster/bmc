@@ -5,5 +5,5 @@
     mysql_select_db ($sql_db);
 	$query = "DELETE FROM albums WHERE id='" . $_GET['id'] . "'";
 	$result = mysql_query($query);
-	redirect(adminLink('photos'));
+	redirect(adminLink('albums'));
 ?>
