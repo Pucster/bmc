@@ -1,5 +1,5 @@
 <?php
-	$hostname = "localhost";
+	$hostname = "localhost:2080";
 	$context = "/bmc";
 	$sql_host = "localhost";
 	$sql_user = "root";
